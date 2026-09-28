@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instituto Cornélio</title>
+<link rel="icon" type="image/png" href="images/favicon.ico">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="bust-glyph" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="1">
+    <polygon points="100,25 138,48 138,95 100,118 62,95 62,48"/>
+    <line x1="100" y1="70" x2="100" y2="25"/>
+    <line x1="100" y1="70" x2="138" y2="48"/>
+    <line x1="100" y1="70" x2="138" y2="95"/>
+    <line x1="100" y1="70" x2="100" y2="118"/>
+    <line x1="100" y1="70" x2="62" y2="95"/>
+    <line x1="100" y1="70" x2="62" y2="48"/>
+    <line x1="88" y1="118" x2="80" y2="140"/>
+    <line x1="112" y1="118" x2="120" y2="140"/>
+    <polygon points="38,236 162,236 122,140 78,140"/>
+    <line x1="78" y1="140" x2="162" y2="236"/>
+    <line x1="122" y1="140" x2="38" y2="236"/>
+    <g fill="currentColor" stroke="none">
+      <circle cx="100" cy="25" r="2.4"/>
+      <circle cx="138" cy="48" r="2.4"/>
+      <circle cx="138" cy="95" r="2.4"/>
+      <circle cx="100" cy="118" r="2.4"/>
+      <circle cx="62" cy="95" r="2.4"/>
+      <circle cx="62" cy="48" r="2.4"/>
+      <circle cx="100" cy="70" r="2.6"/>
+      <circle cx="38" cy="236" r="2.4"/>
+      <circle cx="162" cy="236" r="2.4"/>
+      <circle cx="78" cy="140" r="2.4"/>
+      <circle cx="122" cy="140" r="2.4"/>
+    </g>
+  </symbol>
+
+  <symbol id="glyph-compass" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <circle cx="16" cy="16" r="13"/>
+    <polygon points="16,8 19,16 16,24 13,16" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="glyph-focus" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <circle cx="16" cy="16" r="4" fill="currentColor" stroke="none"/>
+    <path d="M16 2v6M16 24v6M2 16h6M24 16h6"/>
+  </symbol>
+  <symbol id="glyph-result" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <path d="M5 24V16M14 24V10M23 24V4"/>
+    <path d="M2 24h28"/>
+  </symbol>
+
+  <symbol id="glyph-espirito" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <path d="M16 3c5 6 7.5 9.5 7.5 13.5a7.5 7.5 0 0 1-15 0C8.5 12.5 11 9 16 3Z"/>
+    <circle cx="16" cy="19" r="3"/>
+  </symbol>
+  <symbol id="glyph-mente" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <circle cx="16" cy="14" r="9.5"/>
+    <path d="M11 14c0-3 2.2-5 5-5s5 1.8 5 4.4c0 2.4-2 3.6-5 3.6"/>
+    <path d="M16 17.6V22"/>
+    <path d="M12 28h8"/>
+  </symbol>
+  <symbol id="glyph-corpo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <circle cx="16" cy="6" r="3.2"/>
+    <path d="M16 10v10M16 20l-5 8M16 20l5 8M8 13.5l8 2 8-2"/>
+  </symbol>
+  <symbol id="glyph-emocoes" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <path d="M16 27S5 20 5 13.2A5.6 5.6 0 0 1 16 9.6a5.6 5.6 0 0 1 11 3.6C27 20 16 27 16 27Z"/>
+    <path d="M9.5 15.5c1.8-2.2 3.4-2.2 5.2 0s3.4 2.2 5.2 0"/>
+  </symbol>
+
+  <symbol id="glyph-cafe" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <path d="M6.5 12h15v6.5a6.5 6.5 0 0 1-6.5 6.5h-2A6.5 6.5 0 0 1 6.5 18.5V12Z"/>
+    <path d="M21.5 14h3a3 3 0 0 1 0 6h-3"/>
+    <path d="M4 28h20"/>
+    <path d="M11.5 8.5c0-2 1.5-2.2 1.5-4M17 8.5c0-2 1.5-2.2 1.5-4"/>
+  </symbol>
+  <symbol id="glyph-vitamina" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <path d="M9.5 8h13l-1.6 19h-9.8L9.5 8Z"/>
+    <path d="M10.4 15h11.2"/>
+    <path d="M16 14c.4-3.6 2.6-6.4 6-7.4-.6 4.4-2.4 7-6 7.4Z"/>
+  </symbol>
+  <symbol id="glyph-energia" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+    <path d="M18.5 3 8 18h6.5L12 29l12-16.5h-7.5l2-9.5Z"/>
+  </symbol>
+</svg>
+
+<header id="siteHeader">
+  <div class="wrap navrow">
+    <a href="#hero" class="logo">©ORN<em>É</em>LIO</a>
+    <nav class="links" id="navLinks">
+      <a href="#historia" data-target="historia">História</a>
+      <a href="#biblioteca" data-target="biblioteca">Biblioteca</a>
+      <a href="#produtos" data-target="produtos">Produtos</a>
+      <a href="#mentoria" data-target="mentoria">Mentoria</a>
+      <a href="#contato" data-target="contato">Contato</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="rail" id="rail">
+  <div class="stem"></div>
+  <a href="#hero" data-target="hero" aria-label="Início"></a>
+  <a href="#historia" data-target="historia" aria-label="História"></a>
+  <a href="#biblioteca" data-target="biblioteca" aria-label="Biblioteca"></a>
+  <a href="#produtos" data-target="produtos" aria-label="Produtos"></a>
+  <a href="#mentoria" data-target="mentoria" aria-label="Mentoria"></a>
+  <a href="#contato" data-target="contato" aria-label="Contato"></a>
+</div>
+
+<main>
+
+  <section id="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-tag">Um burro inteligente</p>
+          <h1 class="hero-title">Instituto<br>Corn<span style="color:var(--gold)">é</span>lio</h1>
+          <p class="hero-lede">Desenvolvimento com a tranformação dos hábitos em habilidades.</p>
+          <div class="btn-row">
+            <a href="#historia" class="btn solid">Minha história</a>
+            <a href="#mentoria" class="btn">Mentoria Cornélio</a>
+          </div>
+        </div>
+        <div class="frame">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <img src="images/cornelio.jpg" alt="Cornélio, fundador do instituto" class="portrait"/>
+          <div class="scan"></div>
+          <span class="cap">retrato — cornélio, fundador</span>
+        </div>
+      </div>
+
+      <div class="quickcards">
+        <div class="qcard">
+          <p class="eyebrow">Minha história</p>
+          <p>Conheça a origem do instituto Cornélio.</p>
+          <a href="#historia">Ler história →</a>
+        </div>
+        <div class="qcard">
+          <p class="eyebrow">Biblioteca</p>
+          <p>Acesse gratuitamente toda a biblioteca.</p>
+          <a href="#biblioteca">Explorar biblioteca →</a>
+        </div>
+        <div class="qcard">
+          <p class="eyebrow">Mentoria</p>
+          <p>Receba orientação individual para acelerar.</p>
+          <a href="#mentoria">Ver mentoria →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="historia">
+    <div class="wrap">
+      <div class="split">
+        <div class="frame">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <img src="images/minicornelio2.jpg" alt="portrait of Cornélio as a child" class="portrait"/>
+          <span class="cap">arquivo — aos 12 anos</span>
+        </div>
+        <div>
+          <p class="eyebrow">Minha história</p>
+          <h2 class="section-title">Toda história começa com uma escolha.</h2>
+          <div class="prose">
+            <p>A minha começou aos 12 anos, quando decidi que viver não seria suficiente. Eu queria entender como uma pessoa evolui, supera seus limites e constrói uma vida com propósito.</p>
+            <p>Com o tempo, descobri que a transformação não acontece em um dia. Ela nasce da repetição de pequenas escolhas — e da coragem de seguir mesmo quando ninguém está olhando.</p>
+            <p>Foi assim que nasceu o <strong>Instituto Cornélio</strong>: um projeto dedicado ao desenvolvimento pessoal por meio de princípios, hábitos e habilidades. Um lugar onde o conhecimento se transforma em resultado.</p>
+            <p>Se você acredita que existe uma versão melhor de si mesmo, então seja bem-vindo. Sua jornada começa aqui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="biblioteca">
+    <div class="wrap">
+      <div class="split rev">
+        <div>
+          <p class="eyebrow">Biblioteca Cornélio</p>
+          <h2 class="section-title">Conhecimento Organizado:</h2>
+          <ol class="qa-list">
+            <li><span>01</span><a href="https://youtu.be/xFBO2GJIAgM?si=14BGKJdRA1UjaKt-" target="_blank" rel="noopener">Como nasceu o sistema solar?</a></li>
+            <li><span>02</span><a href="https://youtu.be/nlyW19fpGf4?si=DUYlyz4fliQEqRQ_" target ="_blank" rel="noopener">Como surgiu a vida na Terra?</a></li>
+            <li><span>03</span><a href="https://youtu.be/Syg8CCTjj3g?si=S6dsjLxb9qXkQxXP" target ="_blank" rel="noopener">Como surgiu o ser humano?</a></li>
+            <li><span>04</span><a href="https://youtu.be/zh2Is7TLPAI?si=ix-W8iTg4bEIurBT" target ="_blank" rel="noopener">O que é consciência?</a></li>
+            <li><span>05</span><a href="https://youtu.be/DXW9L7a4o8A?si=StSaz0CkAConVUz3" target ="_blank" rel="noopener">Qual é o sentido da vida?</a></li>
+          </ol>
+          <p class="prose" style="margin-top:2rem;">Aprofunde sua experiência com nossos livros.</p>
+          <div class="btn-row" style="margin-top:1.4rem;">
+            <a href="#" class="btn solid">Biblioteca completa</a>
+          </div>
+        </div>
+        <div class="frame">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <img src="images/image.png" alt="portrait of Cornélio as a child" class="portrait"/>
+          <span class="cap">Sala de Concentração — Instituo Cornelio</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="produtos">
+    <div class="wrap">
+      <p class="eyebrow">Produtos Cornélio</p>
+      <h2 class="section-title">Leve o instituto para o seu dia a dia.</h2>
+      <p class="prose" style="margin-bottom:2.4rem;">Programas e ebooks para acompanhar seus hábitos — durante o dia a dia.</p>
+
+      <div class="prod-group">
+        <div class="group-head">
+          <h3 class="group-title">Cursos</h3>
+          <p>Os quatro pilares do desenvolvimento, com conteúdo e orientação contínua.</p>
+        </div>
+
+        <div class="digital-grid">
+          <article class="dcard">
+            <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><use href="#glyph-espirito"/></svg>
+            <span class="badge">Curso</span>
+            <h4>Espírito</h4>
+            <p>Propósito, domínio e paz interior. A base que sustenta o objetivo.</p>
+            <a href="https://go.hotmart.com/J107584624U" class="btn" target="_blank" rel="noopener">Conhecer</a>
+          </article>
+
+          <article class="dcard">
+            <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><use href="#glyph-mente"/></svg>
+            <span class="badge">Curso</span>
+            <h4>Mente</h4>
+            <p>Interpretação e clareza mental. Pensar para decidir melhor.</p>
+            <a href="https://go.hotmart.com/O107587580F" class="btn" target="_blank" rel="noopener">Conhecer</a>
+          </article>
+
+          <article class="dcard">
+            <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><use href="#glyph-corpo"/></svg>
+            <span class="badge">Curso</span>
+            <h4>Corpo</h4>
+            <p>Treino, sono e energia fisica. Para executar oque planeja.</p>
+            <a href="https://go.hotmart.com/A107587774U" class="btn" target="_blank" rel="noopener">Conhecer</a>
+          </article>
+
+          <article class="dcard">
+            <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><use href="#glyph-emocoes"/></svg>
+            <span class="badge">Assinatura</span>
+            <h4>Visão 360°</h4>
+            <p>Visão 360° é a capacidade de perceber a evolução humana.</p>
+            <a href="https://go.hotmart.com/Q107527779E" class="btn" target="_blank" rel="noopener">Assistir</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="prod-group">
+        <div class="group-head">
+          <h3 class="group-title">Ebooks</h3>
+          <p>Guias diretos ao ponto, para aplicar no mesmo dia.</p>
+        </div>
+
+        <div class="digital-grid">
+          <article class="dcard">
+            <span class="glyph-box"><img class="glyph-img" src="images/cafe.png" alt="Café da manhã" loading="lazy"></span>
+            <span class="badge">ebook</span>
+            <h4>Como fazer café</h4>
+            <p>Ganhe na primeira refeição do dia nutrição, vontade e mais energia.</p>
+            <a href="https://go.hotmart.com/V99506845W" class="btn" target="_blank" rel="noopener">Ver ebook</a>
+          </article>
+
+          <article class="dcard">
+            <span class="glyph-box"><img class="glyph-img" src="images/vitamina.png" alt="Vitaminas" loading="lazy"></span>
+            <span class="badge">ebook</span>
+            <h4>Como fazer vitaminas</h4>
+            <p>Receitas nutritivas para manter seu corpo bem durante o dia.</p>
+            <a href="https://go.hotmart.com/A80380078V" class="btn" target="_blank" rel="noopener">Ver ebook</a>
+          </article>
+
+          <article class="dcard">
+            <span class="glyph-box"><img class="glyph-img glyph-img-sm" src="images/energia.png" alt="Energia" loading="lazy"></span>
+            <span class="badge">ebook</span>
+            <h4>Como aumentar energia</h4>
+            <p>O que fazer para recuperar e ganhar mais energia no dia.</p>
+            <a href="https://go.hotmart.com/C102164412T" class="btn" target="_blank" rel="noopener">Ver ebook</a>
+          </article>
+
+          <article class="dcard">
+            <span class="glyph-box"><img class="glyph-img glyph-img-sm" src="images/cerebro.png" alt="Foco" loading="lazy"></span>
+            <span class="badge">ebook</span>
+            <h4>Como aumentar foco</h4>
+            <p>Métodos práticos para treinar a atenção e vencer a distração.</p>
+            <a href="https://go.hotmart.com/C76498787X" class="btn" target="_blank" rel="noopener">Ver ebook</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="prod-group">
+        <div class="group-head">
+          <h3 class="group-title">Edições físicas</h3>
+          <p>Peças para os rituais diários, dentro e fora da biblioteca.</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="frame product">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <img src="images/produto-copo.jpg" alt="Copo reutilizável Cornélio" class="portrait"/>
+            <span class="cap">produto — copo</span>
+          </div>
+          <h3>Copo Cornélio</h3>
+          <p>Copo térmico em fibra natural de Bambu.</p>
+          <a href="https://www.amazon.com.br/dp/B0HJT6ZW8P" class="btn">Ver produto</a>
+        </div>
+
+        <div class="product-card">
+          <div class="frame product">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <img src="images/produto-garrafa.jpg" alt="Garrafa térmica Cornélio" class="portrait"/>
+            <span class="cap">produto — garrafa</span>
+          </div>
+          <h3>Garrafa Cornélio</h3>
+          <p>Garrafa preta de aluminio 500ml</p>
+          <a href="https://www.amazon.com.br/dp/B0HJT7B98M" class="btn">Ver produto</a>
+        </div>
+
+        <div class="product-card">
+          <div class="frame product">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <img src="images/produto-caderno.jpg" alt="Caderno Cornélio" class="portrait"/>
+            <span class="cap">produto — caderno</span>
+          </div>
+          <h3>Caderno Cornélio</h3>
+          <p>Caderno de bolso para registrar ideias e evolução.</p>
+          <a href="https://www.amazon.com.br/dp/B0HJT1FSDZ" class="btn">Ver produto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="mentoria">
+    <div class="wrap">
+      <p class="eyebrow">Mentoria</p>
+      <h2 class="section-title">Evolua com orientação individual.</h2>
+
+      <div class="feat-row">
+        <div class="feat">
+          <svg class="glyph" viewBox="0 0 32 32"><use href="#glyph-compass"/></svg>
+          <h3>Direção</h3>
+          <p>Saber para onde ir.</p>
+        </div>
+        <div class="feat">
+          <svg class="glyph" viewBox="0 0 32 32"><use href="#glyph-focus"/></svg>
+          <h3>Foco</h3>
+          <p>Onde concentrar a energia.</p>
+        </div>
+        <div class="feat">
+          <svg class="glyph" viewBox="0 0 32 32"><use href="#glyph-result"/></svg>
+          <h3>Resultados</h3>
+          <p>Transformar plano em conquista.</p>
+        </div>
+      </div>
+
+      <p class="eyebrow">Como funciona</p>
+      <ul class="steps">
+        <li><span class="num">01</span><span class="txt"><b>Plano de evolução</b><span>Um caminho desenhado como um mapa.</span></span></li>
+        <li><span class="num">02</span><span class="txt"><b>Orientação individual</b><span>Conversas diretas e perguntas com feedback.</span></span></li>
+        <li><span class="num">03</span><span class="txt"><b>Acompanhamento semanal</b><span>Atenção transforma plano em hábito.</span></span></li>
+      </ul>
+
+      <div class="forwho">
+        <div>
+          <span class="eyebrow">Pra quem é?</span>
+          <p>Para pessoas que estão construindo e transformando, conhecimento e habilidades em resultado.</p>
+        </div>
+        <a href="https://wa.me/5519995755191" class="btn solid" target="_blank" rel="noopener">Iniciar experiência</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact-wrap">
+        <div>
+          <p class="eyebrow">Suporte</p>
+          <h2 class="section-title">Fale com a equipe.</h2>
+          <p class="prose">Se você tiver dúvidas sobre a biblioteca, treinamento, inteligência ou o desenvolvimento humano, entre em contato.</p>
+          <div class="btn-row" style="margin-top:1.8rem;">
+            <a href="https://wa.me/5519995755191" class="btn solid" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a href="mailto:institutocornelio@gmail.com" class="btn">Falar por e-mail</a>
+          </div>
+        </div>
+        <p class="quote">Toda grande evolução começa com uma pequena conversa.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <p>© ORNÉLIO 2026 — TODOS OS DIREITOS RESERVADOS</p>
+    <p>INSTITUTO CORNÉLIO</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

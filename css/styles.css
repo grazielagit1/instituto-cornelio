@@ -357,6 +357,6 @@ h2.section-title{font-size:clamp(2rem,4vw,2.9rem); margin:.6rem 0 1.6rem;}
 
 footer{border-top:1px solid var(--line); padding:2.2rem 0; position:relative; z-index:1;}
 .foot-row{display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;}
-.foot-row p{font-family:var(--mono); font-size:.72rem; color:var(--text-faint); letter-spacing:.04em;}
+.foot-row p{font-family:var(--mono); font-size:.6rem; color:var(--text-faint); letter-spacing:.04em;}
 
 :focus-visible{outline:1px solid var(--gold-bright); outline-offset:3px;}

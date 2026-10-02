@@ -242,6 +242,18 @@ h1.hero-title{font-size:clamp(2.6rem,5.4vw,4.4rem); line-height:1.05; margin-bot
 .split.rev .frame{order:2;}
 @media (max-width:800px){ .split, .split.rev{grid-template-columns:1fr;} .split.rev .frame{order:0;} .frame{width:100%; max-width:360px; margin-inline:auto;} }
 
+/* texto da história com a mesma altura da imagem (a altura da linha vem só da foto) */
+@media (min-width:801px){
+  #historia .split{align-items:stretch;}
+  .historia-text{
+    container-type:size;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .historia-text h2.section-title{font-size:min(2.9rem, 7cqh, 8cqi); margin:.4rem 0 min(1.6rem, 3.5cqh);}
+  .historia-text .prose{font-size:min(1.02rem, 2.7cqh, 2.9cqi); line-height:1.6;}
+  .historia-text .prose p + p{margin-top:min(1.1rem, 2.4cqh);}
+}
+
 h2.section-title{font-size:clamp(2rem,4vw,2.9rem); margin:.6rem 0 1.6rem;}
 .prose{color:var(--text-dim); font-size:1.02rem; max-width:56ch;}
 .prose p + p{margin-top:1.1rem;}

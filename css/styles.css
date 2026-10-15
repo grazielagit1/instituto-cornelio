@@ -377,7 +377,7 @@ footer{border-top:1px solid var(--line); padding:2.2rem 0; position:relative; z-
 .reveal{
   opacity:0;
   transform:translateY(28px);
-  transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1), background .3s ease;
+  transition:opacity .5s ease, transform .8s cubic-bezier(.2,.7,.2,1), background .3s ease;
   transition-delay:var(--reveal-delay, 0ms), var(--reveal-delay, 0ms), 0ms;
 }
 .reveal.visible{opacity:1; transform:none;}

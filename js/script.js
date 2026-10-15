@@ -51,3 +51,31 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// elementos aparecem conforme entram na tela durante a rolagem
+const revealSelector = [
+  '.hero-tag', '.hero-title', '.hero-lede', '.btn-row', '.eyebrow', '.section-title',
+  '.prose', '.frame', '.qcard', '.qa-list li', '.group-head', '.product-card', '.dcard',
+  '.feat', '.steps li', '.forwho', '.quote', '.contact-wrap > *'
+].join(',');
+
+if (!prefersReduced && 'IntersectionObserver' in window) {
+  const revealEls = [...document.querySelectorAll(revealSelector)]
+    .filter(el => !el.parentElement.closest(revealSelector));
+
+  revealEls.forEach(el => {
+    const siblings = revealEls.filter(s => s.parentElement === el.parentElement);
+    el.style.setProperty('--reveal-delay', `${Math.min(siblings.indexOf(el), 5) * 90}ms`);
+    el.classList.add('reveal');
+  });
+
+  const revealIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealIo.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+  revealEls.forEach(el => revealIo.observe(el));
+}

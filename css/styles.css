@@ -371,6 +371,19 @@ footer{border-top:1px solid var(--line); padding:2.2rem 0; position:relative; z-
 .foot-row{display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;}
 .foot-row p{font-family:var(--mono); font-size:.6rem; color:var(--text-faint); letter-spacing:.04em;}
 
+/* ---------- desktop: cada frase em uma única linha ---------- */
+@media (min-width:1001px){
+  main h2, main h3, main h4, main p, .qa-list a, .steps .txt span, .btn{white-space:nowrap;}
+  .hero-lede, .prose, .qa-list, .forwho p, .quote{max-width:none;}
+  /* parágrafos longos da história continuam quebrando; o título encolhe para caber */
+  .historia-text .prose p{white-space:normal;}
+  .historia-text h2.section-title{font-size:min(2.9rem, 7cqh, 5cqi);}
+  .dcard{padding-inline:1.2rem;}
+  .dcard p{font-size:.84rem;}
+  /* a citação vai para baixo do texto de contato para caber numa linha */
+  .contact-wrap{grid-template-columns:1fr; gap:2.4rem;}
+}
+
 :focus-visible{outline:1px solid var(--gold-bright); outline-offset:3px;}
 
 /* ---------- animação de entrada ao rolar ---------- */

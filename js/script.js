@@ -10,8 +10,13 @@ const navOverlay = document.getElementById('navOverlay');
 const setNavOpen = (open) => {
   navLinksMenu.classList.toggle('open', open);
   navOverlay.classList.toggle('open', open);
+  const wasOpen = navToggle.getAttribute('aria-expanded') === 'true';
   navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   document.body.style.overflow = open ? 'hidden' : '';
+  // foco acompanha o menu: entra no primeiro link e volta para o botão ao fechar
+  if (open) navLinksMenu.querySelector('a')?.focus({ preventScroll: true });
+  else if (wasOpen && navLinksMenu.contains(document.activeElement)) navToggle.focus({ preventScroll: true });
 };
 
 if (navToggle && navLinksMenu && navOverlay) {
@@ -54,23 +59,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // elementos aparecem conforme entram na tela durante a rolagem
 const revealSelector = [
-  '.hero-tag', '.hero-title', '.hero-lede', '.btn-row', '.eyebrow', '.section-title',
-  '.prose', '.frame', '.qcard', '.qa-list li', '.group-head', '.product-card', '.dcard',
-  '.feat', '.steps li', '.forwho', '.quote', '.contact-wrap > *'
+  // título do hero, títulos de seção, molduras e citação têm animação própria em motion.js
+  '.hero-tag', '.hero-lede', '.btn-row', '.eyebrow',
+  '.prose', '.qcard', '.qa-list li', '.group-head', '.product-card', '.dcard',
+  '.feat', '.steps li', '.forwho', '.contact-wrap > div'
 ].join(',');
 
-if (!prefersReduced && 'IntersectionObserver' in window) {
+// com movimento reduzido a animação continua, mas só como esmaecimento (ver CSS)
+if ('IntersectionObserver' in window) {
   const revealEls = [...document.querySelectorAll(revealSelector)]
     .filter(el => !el.parentElement.closest(revealSelector));
 
-  // os elementos do topo (incluindo a primeira imagem) entram em sequência, um após o outro
+  // os elementos do topo entram em sequência curta (60ms entre cada um)
   const heroEls = revealEls.filter(el => el.closest('#hero'));
 
   revealEls.forEach(el => {
     const siblings = revealEls.filter(s => s.parentElement === el.parentElement);
     const delay = heroEls.includes(el)
-      ? 150 + heroEls.indexOf(el) * 180
-      : Math.min(siblings.indexOf(el), 5) * 90;
+      ? 280 + heroEls.indexOf(el) * 60 // depois das linhas do título
+      : Math.min(siblings.indexOf(el), 5) * 50;
     el.style.setProperty('--reveal-delay', `${delay}ms`);
     el.classList.add('reveal');
   });
@@ -83,8 +90,6 @@ if (!prefersReduced && 'IntersectionObserver' in window) {
       }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
-  // só começa depois que a página (e as imagens) terminarem de carregar, para a animação ser vista
-  const startReveal = () => revealEls.forEach(el => revealIo.observe(el));
-  if (document.readyState === 'complete') startReveal();
-  else window.addEventListener('load', startReveal);
+  // começa já: esperar todas as imagens carregarem deixava o topo da página vazio por segundos
+  requestAnimationFrame(() => revealEls.forEach(el => revealIo.observe(el)));
 }
